@@ -23,11 +23,13 @@
       --text-muted:  #9CA3AF;
       --accent:      #0891B2;
       --accent-2:    #7C3AED;
-      --accent-bright: #06b6d4;
-      --accent-bright-2: #0ea5e9;
+      --accent-bright: #0E7490;
+      --accent-bright-2: #0369A1;
       --accent-dark: #0E7490;
       --accent-soft: #ECFEFF;
       --gradient-primary: linear-gradient(120deg, var(--accent), var(--accent-bright) 60%, var(--accent-bright-2));
+      --gradient-card-bg: linear-gradient(145deg, rgba(255,255,255,.9), rgba(247,245,240,.9));
+      --gradient-contact-bg: linear-gradient(145deg, rgba(255,255,255,.88), rgba(247,250,252,.92));
       --bg-glow-cyan: #f0fcff;
       --bg-glow-violet: #f5f3ff;
       --ambient-cyan: #67e8f9;
@@ -75,8 +77,16 @@
       z-index: -1;
       pointer-events: none;
     }
-    body::before { top: var(--ambient-top); right: var(--ambient-right); background: var(--ambient-cyan); }
-    body::after { bottom: var(--ambient-bottom); left: var(--ambient-left); background: var(--ambient-violet); }
+    body::before {
+      top: var(--ambient-top);
+      right: var(--ambient-right);
+      background: var(--ambient-cyan);
+    }
+    body::after {
+      bottom: var(--ambient-bottom);
+      left: var(--ambient-left);
+      background: var(--ambient-violet);
+    }
 
     
     ::-webkit-scrollbar { width: 6px; }
@@ -322,7 +332,7 @@
     #skills {}
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
     .skill-category {
-      background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(247,245,240,.9));
+      background: var(--gradient-card-bg);
       border: 1px solid var(--border); border-radius: var(--radius);
       padding: 1.6rem; transition: var(--transition);
     }
@@ -450,7 +460,7 @@
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 
     .contact-info-card {
-      background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(247,250,252,.92));
+      background: var(--gradient-contact-bg);
       border: 1px solid rgba(255,255,255,.6);
       border-radius: var(--radius); padding: 2rem;
       box-shadow: var(--shadow-sm);
