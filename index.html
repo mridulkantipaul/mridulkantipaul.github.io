@@ -27,6 +27,7 @@
       --accent-bright-2: #0ea5e9;
       --accent-dark: #0E7490;
       --accent-soft: #ECFEFF;
+      --gradient-primary: linear-gradient(120deg, var(--accent), var(--accent-bright) 60%, var(--accent-bright-2));
       --bg-glow-cyan: #f0fcff;
       --bg-glow-violet: #f5f3ff;
       --ambient-cyan: #67e8f9;
@@ -44,6 +45,7 @@
       --shadow-md:   0 4px 20px rgba(0,0,0,.08);
       --shadow-lg:   0 12px 40px rgba(0,0,0,.10);
       --glow:        0 10px 28px rgba(8,145,178,.18);
+      --glow-hover:  0 12px 30px rgba(8,145,178,.32);
       --radius:      14px;
       --transition:  .35s cubic-bezier(.4,0,.2,1);
     }
@@ -52,7 +54,7 @@
 
     body {
       font-family: 'Mulish', sans-serif;
-      background: radial-gradient(circle at 15% -10%, var(--bg-glow-cyan) 0%, transparent 40%),
+      background: radial-gradient(circle at 15% 0%, var(--bg-glow-cyan) 0%, transparent 40%),
                   radial-gradient(circle at 95% 0%, var(--bg-glow-violet) 0%, transparent 36%),
                   linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 35%);
       color: var(--text);
@@ -183,14 +185,14 @@
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: linear-gradient(120deg, var(--accent), var(--accent-bright) 60%, var(--accent-bright-2)); color: var(--text-inverse);
+      background: var(--gradient-primary); color: var(--text-inverse);
       padding: .75rem 1.8rem; border-radius: 8px;
       font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 600;
       text-decoration: none; border: 2px solid transparent;
       transition: var(--transition); letter-spacing: .02em;
       box-shadow: var(--glow);
     }
-    .btn-primary:hover { background: linear-gradient(120deg, var(--accent-dark), var(--accent)); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(8,145,178,.32); }
+    .btn-primary:hover { background: linear-gradient(120deg, var(--accent-dark), var(--accent)); transform: translateY(-2px); box-shadow: var(--glow-hover); }
 
     .btn-outline {
       display: inline-flex; align-items: center; gap: .5rem;
